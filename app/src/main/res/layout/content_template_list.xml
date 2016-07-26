@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_48"
+        android:layout_margin="@dimen/space_16">
+
+        <TextView
+            style="@style/templates_list_content_text"
+            android:text="Полиция"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_marginRight="@dimen/space_16"
+                android:src="@drawable/change_24dp"/>
+
+            <ImageView
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_marginRight="@dimen/space_16"
+                android:src="@drawable/preview_24dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

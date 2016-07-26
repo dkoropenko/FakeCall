@@ -16,11 +16,24 @@
         <item name="android:textSize">@dimen/font_24</item>
         <item name="android:textColor">@color/txt_main_btn</item>
     </style>
+    <style name="templates_list_text" parent="text">
+        <item name="android:textSize">@dimen/font_24</item>
+        <item name="android:textColor">@color/txt_main</item>
+    </style>
 
+    <!--MainActivity-->
     <style name="main_btn" parent="templates_btn_text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_64</item>
         <item name="android:layout_marginTop">@dimen/space_16</item>
         <item name="android:background">@drawable/start_btn</item>
     </style>
+
+    <!--Content template list-->
+    <style name="templates_list_content_text" parent="templates_list_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
 </resources>
