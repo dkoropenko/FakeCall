@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/space_16"
+    android:background="@color/background_main"
+    tools:context="com.smalew.fakecall.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/template_btn"
+            style="@style/main_btn"
+            android:text="Шаблоны звонков"/>
+
+        <Button
+            android:id="@+id/view_btn"
+            style="@style/main_btn"
+            android:text="Внешний вид"/>
+
+        <Button
+            android:id="@+id/clock_btn"
+            style="@style/main_btn"
+            android:text="Настраиваемый старт"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start_btn"
+        style="@style/main_btn"
+        android:layout_alignParentBottom="true"
+        android:text="Быстрый Старт"/>
+
+</RelativeLayout>
