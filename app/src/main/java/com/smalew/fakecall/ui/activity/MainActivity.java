@@ -1,9 +1,14 @@
-package com.smalew.fakecall;
+package com.smalew.fakecall.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
+import com.smalew.fakecall.R;
+
+import butterknife.BindView;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

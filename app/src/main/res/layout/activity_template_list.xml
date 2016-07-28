@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/space_16"
-    tools:context="com.smalew.fakecall.TemplateListActivity">
+    tools:context=".ui.activity.TemplateListActivity">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/template_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
