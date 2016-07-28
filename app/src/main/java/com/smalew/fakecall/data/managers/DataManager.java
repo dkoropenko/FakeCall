@@ -14,26 +14,26 @@ public class DataManager {
     private static TemplatesInfo sTemplatesInfo;
 
 
-
     public DataManager() {
         sTemplatesInfo = new TemplatesInfo();
     }
 
-    public static DataManager getInstance(){
-        if (instance == null){
+    public static DataManager getInstance() {
+        if (instance == null) {
             instance = new DataManager();
         }
 
         return instance;
     }
-    
-//    region DataBase
-    public List getTemplates(){
-        // TODO: 28.07.16 Сделать вывод данных из таблицы. 
-        return null;
+
+    //======Region DataBase==========
+    public List getTemplates() {
+        return sTemplatesInfo.getTemplates();
     }
-    public void setTemplate(Template template){
+
+    public void setTemplate(Template template) {
         sTemplatesInfo.insertTemplate(template);
     }
+    //======End Database==============
 
 }

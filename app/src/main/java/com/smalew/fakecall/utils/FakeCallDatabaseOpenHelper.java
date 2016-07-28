@@ -1,5 +1,6 @@
 package com.smalew.fakecall.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -15,13 +16,34 @@ public class FakeCallDatabaseOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table "+ Constants.DB_NAME +" (_id INTEGER NOTNULL AUTOINCREMENT, " +
-                Constants.DB_TEMPLATE_NAME +" TEXT NOTNULL," +
-                Constants.DB_SUBSCIBER_NAME +" TEXT, " +
+        sqLiteDatabase.execSQL("create table "+ Constants.DB_NAME +" (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                Constants.DB_TEMPLATE_NAME +" TEXT NOT NULL," +
+                Constants.DB_SUBSCRIBER_NAME +" TEXT, " +
                 Constants.DB_PHONE_NUMBER +" TEXT, " +
                 Constants.DB_MUSIC +" TEXT," +
                 Constants.DB_AVATAR +" TEXT," +
                 Constants.DB_VOICE +" TEXT)");
+
+        ContentValues values = new ContentValues();
+        values.put(Constants.DB_TEMPLATE_NAME, "Полиция");
+        values.put(Constants.DB_SUBSCRIBER_NAME, "Полиция");
+        values.put(Constants.DB_PHONE_NUMBER, "02");
+        values.put(Constants.DB_MUSIC, "");
+        values.put(Constants.DB_AVATAR, "");
+        values.put(Constants.DB_VOICE, "");
+
+        sqLiteDatabase.insert(Constants.DB_NAME, null, values);
+
+        values.put(Constants.DB_TEMPLATE_NAME, "Босс");
+        values.put(Constants.DB_SUBSCRIBER_NAME, "Виктор Анатольевич");
+        values.put(Constants.DB_PHONE_NUMBER, "8900 305 40-50");
+        values.put(Constants.DB_MUSIC, "");
+        values.put(Constants.DB_AVATAR, "");
+        values.put(Constants.DB_VOICE, "");
+
+        // TODO: 28.07.16 Обдумать заполнение БД. Покурить мануалы как это делается.
+
+        sqLiteDatabase.insert(Constants.DB_NAME, null, values);
     }
 
     @Override

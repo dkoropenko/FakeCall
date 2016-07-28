@@ -3,6 +3,7 @@ package com.smalew.fakecall.utils;
 import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 /**
  * Created by koropenkods on 28.07.16.
@@ -20,6 +21,8 @@ public class FakeCallApplication extends Application {
         sContext = this;
 
         mHelper = new FakeCallDatabaseOpenHelper(this);
+        sDatabase = mHelper.getWritableDatabase();
+        Log.d(TAG, "onCreate: in FAKE CALL APPLICATION");
     }
 
     public static Context getContext() {
@@ -27,7 +30,6 @@ public class FakeCallApplication extends Application {
     }
 
     public static SQLiteDatabase getDatabase() {
-        sDatabase = mHelper.getWritableDatabase();
         return sDatabase;
     }
 }
