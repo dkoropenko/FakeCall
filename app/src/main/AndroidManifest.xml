@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".ui.activity.TemplateListActivity">
         </activity>
+        <activity android:name=".ui.activity.TemplateOptionsActivity">
+        </activity>
     </application>
 
 </manifest>

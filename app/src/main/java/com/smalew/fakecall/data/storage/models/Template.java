@@ -1,5 +1,8 @@
 package com.smalew.fakecall.data.storage.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by koropenkods on 28.07.16.
  * Class contains information about template from database.

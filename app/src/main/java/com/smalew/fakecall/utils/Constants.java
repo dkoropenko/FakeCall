@@ -14,4 +14,5 @@ public interface Constants {
     String DB_AVATAR = "avatar";
     String DB_VOICE = "voice";
 
+    String PARCEBLE_VALUE = "parcebleValue";
 }

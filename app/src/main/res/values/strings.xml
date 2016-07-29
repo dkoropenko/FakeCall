@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FakeCall</string>
+    <string name="txt_template_name">Имя шаблона</string>
+    <string name="txt_describer_name">Имя абонента</string>
+    <string name="txt_phone_number">Номер телефона</string>
+    <string name="txt_music">Мелодия вызова</string>
+    <string name="txt_avatar">Аватар</string>
+    <string name="txt_voice">Голос абонента</string>
+    <string name="txt_save">Сохранить</string>
 </resources>

@@ -6,6 +6,8 @@
 
     <color name="background_main">#eaeef4</color>
     <color name="background_btn">#264c91</color>
+    <color name="background_options_btn">#00264c91</color>
+    <color name="background_separator">#6e6e6e</color>
 
     <color name="txt_main">#264c91</color>
     <color name="txt_main_btn">#dde9ff</color>

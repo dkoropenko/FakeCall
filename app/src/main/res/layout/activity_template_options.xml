@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.smalew.fakecall.ui.activity.TemplateOptionsActivity">
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/templates_options_edittext_layout">
+
+        <EditText
+            android:id="@+id/template_edit_name"
+            style="@style/templates_options_edittext"
+            android:text="@string/txt_template_name"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/templates_options_edittext_layout">
+
+        <EditText
+            android:id="@+id/template_edit_describer"
+            style="@style/templates_options_edittext"
+            android:text="@string/txt_describer_name"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/templates_options_edittext_layout">
+
+        <EditText
+            android:id="@+id/template_edit_phone_number"
+            style="@style/templates_options_edittext"
+            android:text="@string/txt_phone_number"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        style="@style/templates_options_button"
+        android:text="@string/txt_music"/>
+
+    <Button
+        style="@style/templates_options_button"
+        android:text="@string/txt_avatar"/>
+
+    <Button
+        style="@style/templates_options_button"
+        android:text="@string/txt_voice"/>
+
+    <Button
+        android:id="@+id/template_btn_save"
+        style="@style/main_btn"
+        android:text="@string/txt_save"/>
+
+</LinearLayout>

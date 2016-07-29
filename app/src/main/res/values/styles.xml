@@ -20,6 +20,14 @@
         <item name="android:textSize">@dimen/font_24</item>
         <item name="android:textColor">@color/txt_main</item>
     </style>
+    <style name="templates_options_text" parent="text">
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">@color/txt_main</item>
+    </style>
+    <style name="templates_options_btn" parent="text">
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColor">@color/txt_main</item>
+    </style>
 
     <!--MainActivity-->
     <style name="main_btn" parent="templates_btn_text">
@@ -34,6 +42,27 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--Added new Template-->
+    <style name="templates_options_edittext_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_16</item>
+    </style>
+    <style name="templates_options_edittext" parent="templates_options_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:inputType">text</item>
+    </style>
+    <style name="templates_options_button" parent="templates_options_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_8</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:drawableRight">@drawable/open_file_24dp</item>
+        <item name="android:background">@color/background_options_btn</item>
     </style>
 
 </resources>
