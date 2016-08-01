@@ -1,12 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="text">
         <item name="android:fontFamily">sans-serif</item>
@@ -17,16 +23,20 @@
         <item name="android:textColor">@color/txt_main_btn</item>
     </style>
     <style name="templates_list_text" parent="text">
-        <item name="android:textSize">@dimen/font_24</item>
-        <item name="android:textColor">@color/txt_main</item>
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColor">@color/txt_main_blue</item>
     </style>
     <style name="templates_options_text" parent="text">
-        <item name="android:textSize">@dimen/font_20</item>
-        <item name="android:textColor">@color/txt_main</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/txt_main_black</item>
     </style>
     <style name="templates_options_btn" parent="text">
-        <item name="android:textSize">@dimen/font_18</item>
-        <item name="android:textColor">@color/txt_main</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/txt_main_black</item>
+    </style>
+    <style name="templates_options_btn_txt" parent="text">
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/txt_options</item>
     </style>
 
     <!--MainActivity-->
@@ -42,9 +52,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/size_8</item>
     </style>
 
-    <!--Added new Template-->
+    <!--Template Options-->
     <style name="templates_options_edittext_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -63,6 +74,18 @@
         <item name="android:gravity">left|center_vertical</item>
         <item name="android:drawableRight">@drawable/open_file_24dp</item>
         <item name="android:background">@color/background_options_btn</item>
+    </style>
+    <style name="templates_options_btn_text" parent="templates_options_btn_txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/space_8</item>
+    </style>
+
+    <!--Toolbar-->
+    <style name="ToolbarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/txt_toolbar</item>
+        <item name="android:textColorSecondary">@color/txt_toolbar</item>
+        <item name="android:actionMenuTextColor">@color/txt_toolbar</item>
     </style>
 
 </resources>

@@ -1,18 +1,23 @@
 package com.smalew.fakecall.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.redmadrobot.chronos.ChronosConnector;
 import com.smalew.fakecall.R;
 import com.smalew.fakecall.data.managers.DataManager;
 import com.smalew.fakecall.data.storage.models.Template;
 import com.smalew.fakecall.data.storage.models.TemplateDTO;
 import com.smalew.fakecall.ui.adapters.TemplateListAdapter;
+import com.smalew.fakecall.utils.ChronosGetTemplate;
 import com.smalew.fakecall.utils.Constants;
 
 import java.util.List;
@@ -25,21 +30,91 @@ public class TemplateListActivity extends BaseActivity {
 
     @BindView(R.id.template_list)
     RecyclerView mTemplateList;
-    private List<Template> mTemplates;
+
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+
+    final private ChronosConnector mChronosConnector = new ChronosConnector();;
 
     private DataManager mDataManager;
+    private List<Template> mTemplates;
     private TemplateListAdapter mTemplateListAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template_list);
         ButterKnife.bind(this);
+        mChronosConnector.onCreate(this, savedInstanceState);
 
         mDataManager = DataManager.getInstance();
+        mChronosConnector.runOperation(new ChronosGetTemplate(), false);
 
+        initTollbar();
+    }
 
-        mTemplates = mDataManager.getTemplates(); //TODO: 28.07.16 Fix code. Create Thread for working with database.
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mChronosConnector.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mChronosConnector.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mChronosConnector.onSaveInstanceState(outState);
+    }
+
+    private void initTollbar(){
+        mToolbar.setTitle(R.string.toolbar_templates_list);
+        setSupportActionBar(mToolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        MenuItem addBtn = menu.findItem(R.id.toolbar_add);
+        MenuItem applyBtn = menu.findItem(R.id.toolbar_apply);
+
+        addBtn.setVisible(true);
+        applyBtn.setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.toolbar_add){
+            showToast("Добавить шаблон");
+
+            // TODO: 01.08.16 Open new activity for creating template
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onOperationFinished(final ChronosGetTemplate.Result result) {
+        if (result.isSuccessful()) {
+            showData(result.getOutput());
+        } else {
+            showToast("Error load list");
+        }
+    }
+
+    private void showData(List<Template> result){
+        mTemplates = result;
 
         mTemplateListAdapter = new TemplateListAdapter(mTemplates, new TemplateListAdapter.ViewHolder.CustomClickListener() {
             @Override
@@ -49,7 +124,7 @@ public class TemplateListActivity extends BaseActivity {
                 switch (v.getId()){
                     case R.id.template_change_btn:
                         Intent intent = new Intent(TemplateListActivity.this, TemplateOptionsActivity.class);
-                        intent.putExtra(Constants.PARCEBLE_VALUE, template);
+                        intent.putExtra(Constants.PARCABLE_VALUE, template);
                         startActivity(intent);
                         break;
                     case R.id.template_preview_btn:

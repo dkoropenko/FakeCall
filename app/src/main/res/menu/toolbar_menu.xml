@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/toolbar_apply"
+        android:icon="@drawable/toolbar_apply_24dp"
+        android:title="@string/apply"
+        app:showAsAction="always|collapseActionView"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/toolbar_add"
+        android:icon="@drawable/toolbar_add_24dp"
+        android:title="@string/toolbar_add"
+        app:showAsAction="always|collapseActionView"
+        android:visible="false"/>
+
+</menu>

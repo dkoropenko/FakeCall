@@ -28,18 +28,18 @@ public class FakeCallDatabaseOpenHelper extends SQLiteOpenHelper {
         values.put(Constants.DB_TEMPLATE_NAME, "Полиция");
         values.put(Constants.DB_SUBSCRIBER_NAME, "Полиция");
         values.put(Constants.DB_PHONE_NUMBER, "02");
-        values.put(Constants.DB_MUSIC, "");
-        values.put(Constants.DB_AVATAR, "");
-        values.put(Constants.DB_VOICE, "");
+        values.put(Constants.DB_MUSIC, "Default");
+        values.put(Constants.DB_AVATAR, "Default");
+        values.put(Constants.DB_VOICE, "Default");
 
         sqLiteDatabase.insert(Constants.DB_NAME, null, values);
 
         values.put(Constants.DB_TEMPLATE_NAME, "Босс");
         values.put(Constants.DB_SUBSCRIBER_NAME, "Виктор Анатольевич");
         values.put(Constants.DB_PHONE_NUMBER, "8900 305 40-50");
-        values.put(Constants.DB_MUSIC, "");
-        values.put(Constants.DB_AVATAR, "");
-        values.put(Constants.DB_VOICE, "");
+        values.put(Constants.DB_MUSIC, "Boss.mp3");
+        values.put(Constants.DB_AVATAR, "Boss.jpg");
+        values.put(Constants.DB_VOICE, "BossVoice.mp3");
 
         // TODO: 28.07.16 Обдумать заполнение БД. Покурить мануалы как это делается.
 

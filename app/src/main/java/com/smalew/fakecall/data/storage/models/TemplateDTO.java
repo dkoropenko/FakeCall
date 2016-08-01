@@ -61,7 +61,7 @@ public class TemplateDTO implements Parcelable {
         }
     };
 
-    public String getTemplatename() {
+    public String getTemplateName() {
         return mTemplatename;
     }
 

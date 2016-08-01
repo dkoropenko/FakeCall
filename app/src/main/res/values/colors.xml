@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="color_primary">#3F51B5</color>
+    <color name="color_primary_dark">#303F9F</color>
+    <color name="color_accent">#FF4081</color>
 
     <color name="background_main">#eaeef4</color>
     <color name="background_btn">#264c91</color>
     <color name="background_options_btn">#00264c91</color>
-    <color name="background_separator">#6e6e6e</color>
+    <color name="background_separator">#bababa</color>
+    <color name="background_toolbar">#264c91</color>
 
-    <color name="txt_main">#264c91</color>
+    <color name="txt_main_black">#000000</color>
+    <color name="txt_options">#8f8f8f</color>
+    <color name="txt_main_blue">#264c91</color>
     <color name="txt_main_btn">#dde9ff</color>
+    <color name="txt_toolbar">#bebebe</color>
 
 </resources>

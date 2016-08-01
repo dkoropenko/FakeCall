@@ -2,57 +2,101 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.smalew.fakecall.ui.activity.TemplateOptionsActivity">
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/templates_options_edittext_layout">
+    <include layout="@layout/toolbar"/>
 
-        <EditText
-            android:id="@+id/template_edit_name"
-            style="@style/templates_options_edittext"
-            android:text="@string/txt_template_name"/>
-    </android.support.design.widget.TextInputLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/templates_options_edittext_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-        <EditText
-            android:id="@+id/template_edit_describer"
-            style="@style/templates_options_edittext"
-            android:text="@string/txt_describer_name"/>
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                style="@style/templates_options_edittext_layout">
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/templates_options_edittext_layout">
+                <EditText
+                    android:id="@+id/template_edit_name"
+                    style="@style/templates_options_edittext"
+                    android:hint="@string/txt_template_name"/>
+            </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/template_edit_phone_number"
-            style="@style/templates_options_edittext"
-            android:text="@string/txt_phone_number"/>
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                style="@style/templates_options_edittext_layout">
 
-    <Button
-        style="@style/templates_options_button"
-        android:text="@string/txt_music"/>
+                <EditText
+                    android:id="@+id/template_edit_describer"
+                    style="@style/templates_options_edittext"
+                    android:hint="@string/txt_describer_name"/>
+            </android.support.design.widget.TextInputLayout>
 
-    <Button
-        style="@style/templates_options_button"
-        android:text="@string/txt_avatar"/>
+            <android.support.design.widget.TextInputLayout
+                style="@style/templates_options_edittext_layout">
 
-    <Button
-        style="@style/templates_options_button"
-        android:text="@string/txt_voice"/>
+                <EditText
+                    android:id="@+id/template_edit_phone_number"
+                    style="@style/templates_options_edittext"
+                    android:hint="@string/txt_phone_number"/>
+            </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/template_btn_save"
-        style="@style/main_btn"
-        android:text="@string/txt_save"/>
+            <Button
+                android:id="@+id/template_btn_music"
+                style="@style/templates_options_button"
+                android:text="@string/txt_music"/>
+
+            <TextView
+                android:id="@+id/template_text_music"
+                style="@style/templates_options_btn_text"
+                android:text="Deffault"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/background_separator"/>
+
+            <Button
+                android:id="@+id/template_btn_avatar"
+                style="@style/templates_options_button"
+                android:text="@string/txt_avatar"/>
+
+            <TextView
+                android:id="@+id/template_text_avatar"
+                style="@style/templates_options_btn_text"
+                android:text="Deffault"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/background_separator"/>
+
+            <Button
+                android:id="@+id/template_btn_voice"
+                style="@style/templates_options_button"
+                android:text="@string/txt_voice"/>
+
+            <TextView
+                android:id="@+id/template_text_voice"
+                style="@style/templates_options_btn_text"
+                android:text="Deffault"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/background_separator"/>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
