@@ -16,7 +16,7 @@ public class TemplateDTO implements Parcelable {
     private String mVoice;
 
     public TemplateDTO(Template template) {
-        mTemplatename = template.getTemplatename();
+        mTemplatename = template.getTemplateName();
         mSubscribeName = template.getSubscribeName();
         mPhoneNumber = template.getPhoneNumber();
         mMusic = template.getMusic();

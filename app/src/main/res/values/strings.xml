@@ -11,4 +11,10 @@
     <string name="toolbar_change_template">Изменение шаблона</string>
     <string name="toolbar_add">Добавить</string>
     <string name="toolbar_templates_list">Список шаблонов</string>
+    <string name="toolbar_create_template">создать шаблон</string>
+    <string name="init_template_default_value">Default</string>
+    <string name="error_template_exist">Такое имя уже есть</string>
+    <string name="error_empty_name">Введите имя</string>
+    <string name="toolbar_delete">Удалить</string>
+    <string name="error_check_mistakes">Исправьте ошибки</string>
 </resources>

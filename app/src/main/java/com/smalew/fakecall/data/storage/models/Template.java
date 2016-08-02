@@ -3,6 +3,8 @@ package com.smalew.fakecall.data.storage.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.smalew.fakecall.R;
+
 /**
  * Created by koropenkods on 28.07.16.
  * Class contains information about template from database.
@@ -16,6 +18,15 @@ public class Template {
             mAvatar,
             mVoice;
 
+    public Template(){
+        mTemplatename = "";
+        mSubscribeName = "";
+        mPhoneNumber = "";
+        mMusic = "";
+        mAvatar = "";
+        mVoice = "";
+    }
+
     public Template(String templatename, String subscribeName, String phoneNumber, String music, String avatar, String voice) {
         mTemplatename = templatename;
         mSubscribeName = subscribeName;
@@ -25,7 +36,16 @@ public class Template {
         mVoice = voice;
     }
 
-    public String getTemplatename() {
+    public Template (TemplateDTO templateDTO){
+        mTemplatename = templateDTO.getTemplateName();
+        mSubscribeName = templateDTO.getSubscribeName();
+        mPhoneNumber = templateDTO.getPhoneNumber();
+        mMusic = templateDTO.getMusic();
+        mAvatar = templateDTO.getAvatar();
+        mVoice = templateDTO.getVoice();
+    }
+
+    public String getTemplateName() {
         return mTemplatename;
     }
 

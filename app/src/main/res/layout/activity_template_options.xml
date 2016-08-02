@@ -25,6 +25,7 @@
             android:paddingTop="@dimen/activity_vertical_margin">
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/template_edit_name_layout"
                 style="@style/templates_options_edittext_layout">
 
                 <EditText
@@ -34,6 +35,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/template_edit_describer_layout"
                 style="@style/templates_options_edittext_layout">
 
                 <EditText
@@ -43,6 +45,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/template_edit_phone_number_layout"
                 style="@style/templates_options_edittext_layout">
 
                 <EditText

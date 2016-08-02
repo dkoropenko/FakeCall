@@ -1,7 +1,10 @@
 package com.smalew.fakecall.data.managers;
 
+import android.content.Context;
+
 import com.smalew.fakecall.data.storage.models.Template;
-import com.smalew.fakecall.data.storage.models.TemplatesInfo;
+import com.smalew.fakecall.data.storage.models.InputOutputDatabase;
+import com.smalew.fakecall.utils.FakeCallApplication;
 
 import java.util.List;
 
@@ -11,29 +14,33 @@ import java.util.List;
 public class DataManager {
 
     private static DataManager instance = null;
-    private static TemplatesInfo sTemplatesInfo;
+    private static InputOutputDatabase sInputOutputDatabase;
 
 
     public DataManager() {
-        sTemplatesInfo = new TemplatesInfo();
+        sInputOutputDatabase = new InputOutputDatabase();
     }
 
     public static DataManager getInstance() {
         if (instance == null) {
             instance = new DataManager();
         }
-
         return instance;
+    }
+
+    public Context getContext(){
+        return FakeCallApplication.getContext();
     }
 
     //======Region DataBase==========
     public List getTemplates() {
-        return sTemplatesInfo.getTemplates();
+        return sInputOutputDatabase.getTemplates();
     }
-
     public void setTemplate(Template template) {
-        sTemplatesInfo.insertTemplate(template);
+        sInputOutputDatabase.insertTemplate(template);
     }
+    public void deleteTemplate(Template template) { sInputOutputDatabase.deleteTemplate(template);}
+    public void updateTemplate(String oldName, Template template) { sInputOutputDatabase.updateTemplate(oldName, template);}
     //======End Database==============
 
 }

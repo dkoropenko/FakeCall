@@ -14,19 +14,18 @@ import java.util.List;
  * Created by koropenkods on 28.07.16.
  * Class for getting and setting info in database;
  */
-public class TemplatesInfo {
+public class InputOutputDatabase {
     private SQLiteDatabase mDatabase;
     private Template mTemplate;
 
-
-    public TemplatesInfo() {
+    public InputOutputDatabase() {
     }
 
     public void insertTemplate(Template template) {
         openDB();
 
         ContentValues values = new ContentValues();
-        values.put(Constants.DB_TEMPLATE_NAME, template.getTemplatename());
+        values.put(Constants.DB_TEMPLATE_NAME, template.getTemplateName());
         values.put(Constants.DB_SUBSCRIBER_NAME, template.getSubscribeName());
         values.put(Constants.DB_PHONE_NUMBER, template.getPhoneNumber());
         values.put(Constants.DB_MUSIC, template.getMusic());
@@ -63,8 +62,30 @@ public class TemplatesInfo {
                 while (cursor.moveToNext());
             }
         }
+        closeDB();
 
         return result;
+    }
+
+    public void deleteTemplate(Template template){
+        openDB();
+        mDatabase.delete(Constants.DB_NAME, Constants.DB_TEMPLATE_NAME +" = ?", new String[]{template.getTemplateName()});
+        closeDB();
+    }
+
+    public void updateTemplate(String oldName, Template template){
+        openDB();
+        ContentValues values = new ContentValues();
+
+        values.put(Constants.DB_TEMPLATE_NAME, template.getTemplateName());
+        values.put(Constants.DB_SUBSCRIBER_NAME, template.getSubscribeName());
+        values.put(Constants.DB_PHONE_NUMBER, template.getPhoneNumber());
+        values.put(Constants.DB_MUSIC, template.getMusic());
+        values.put(Constants.DB_AVATAR, template.getAvatar());
+        values.put(Constants.DB_VOICE, template.getVoice());
+
+        mDatabase.update(Constants.DB_NAME, values, Constants.DB_TEMPLATE_NAME +" = ?",
+                new String[]{oldName});
     }
 
     private void openDB() {

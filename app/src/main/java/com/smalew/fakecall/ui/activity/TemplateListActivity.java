@@ -1,12 +1,12 @@
 package com.smalew.fakecall.ui.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +20,7 @@ import com.smalew.fakecall.ui.adapters.TemplateListAdapter;
 import com.smalew.fakecall.utils.ChronosGetTemplate;
 import com.smalew.fakecall.utils.Constants;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -38,6 +39,7 @@ public class TemplateListActivity extends BaseActivity {
 
     private DataManager mDataManager;
     private List<Template> mTemplates;
+    private ArrayList<String> mTemplateNames;
     private TemplateListAdapter mTemplateListAdapter;
 
 
@@ -97,9 +99,10 @@ public class TemplateListActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.toolbar_add){
-            showToast("Добавить шаблон");
-
-            // TODO: 01.08.16 Open new activity for creating template
+            Intent intent = new Intent(TemplateListActivity.this, TemplateOptionsActivity.class);
+            intent.putExtra(Constants.ADD_NEW_TEMPLATE_FLAG, true);
+            intent.putStringArrayListExtra(Constants.LIST_VALUES, mTemplateNames);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -109,22 +112,30 @@ public class TemplateListActivity extends BaseActivity {
         if (result.isSuccessful()) {
             showData(result.getOutput());
         } else {
-            showToast("Error load list");
+            Log.d(TAG, "onOperationFinished: "+ result.getErrorMessage());
         }
     }
 
     private void showData(List<Template> result){
         mTemplates = result;
 
+        mTemplateNames = new ArrayList<>();
+        for (int i = 0; i < mTemplates.size(); i++) {
+            mTemplateNames.add(mTemplates.get(i).getTemplateName());
+        }
+
         mTemplateListAdapter = new TemplateListAdapter(mTemplates, new TemplateListAdapter.ViewHolder.CustomClickListener() {
             @Override
             public void onClickOpenTemplate(View v, int position) {
                 TemplateDTO template = new TemplateDTO(mTemplates.get(position));
 
+
+
                 switch (v.getId()){
                     case R.id.template_change_btn:
                         Intent intent = new Intent(TemplateListActivity.this, TemplateOptionsActivity.class);
                         intent.putExtra(Constants.PARCABLE_VALUE, template);
+                        intent.putStringArrayListExtra(Constants.LIST_VALUES, mTemplateNames);
                         startActivity(intent);
                         break;
                     case R.id.template_preview_btn:

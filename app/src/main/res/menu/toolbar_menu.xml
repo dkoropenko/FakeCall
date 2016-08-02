@@ -16,4 +16,10 @@
         app:showAsAction="always|collapseActionView"
         android:visible="false"/>
 
+    <item
+        android:id="@+id/toolbar_delete"
+        android:icon="@drawable/toolbar_delete_24dp"
+        android:title="@string/toolbar_delete"
+        app:showAsAction="always|collapseActionView"
+        android:visible="false"/>
 </menu>

@@ -14,5 +14,8 @@ public interface Constants {
     String DB_AVATAR = "avatar";
     String DB_VOICE = "voice";
 
-    String PARCABLE_VALUE = "parcebleValue";
+    String PARCABLE_VALUE = "parcableValue";
+    String LIST_VALUES = "listValue";
+
+    String ADD_NEW_TEMPLATE_FLAG = "newTemplateFlag";
 }

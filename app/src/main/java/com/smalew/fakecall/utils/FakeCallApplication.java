@@ -12,7 +12,6 @@ public class FakeCallApplication extends Application {
     private final String TAG = "FakeCallApplication";
 
     private static Context sContext;
-    private static SQLiteDatabase sDatabase;
     private static FakeCallDatabaseOpenHelper mHelper;
 
     @Override
@@ -21,7 +20,6 @@ public class FakeCallApplication extends Application {
         sContext = this;
 
         mHelper = new FakeCallDatabaseOpenHelper(this);
-        sDatabase = mHelper.getWritableDatabase();
         Log.d(TAG, "onCreate: in FAKE CALL APPLICATION");
     }
 
@@ -30,6 +28,6 @@ public class FakeCallApplication extends Application {
     }
 
     public static SQLiteDatabase getDatabase() {
-        return sDatabase;
+        return mHelper.getWritableDatabase();
     }
 }

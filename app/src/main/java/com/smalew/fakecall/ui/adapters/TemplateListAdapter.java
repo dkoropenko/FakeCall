@@ -35,7 +35,7 @@ public class TemplateListAdapter extends RecyclerView.Adapter<TemplateListAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         Template currentTemplate = mTemplates.get(position);
 
-        holder.mCurrentTemplateName.setText(currentTemplate.getTemplatename());
+        holder.mCurrentTemplateName.setText(currentTemplate.getTemplateName());
     }
 
     @Override
