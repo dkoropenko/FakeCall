@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">FakeCall</string>
+
     <string name="txt_template_name">Имя шаблона</string>
     <string name="txt_describer_name">Имя абонента</string>
     <string name="txt_phone_number">Номер телефона</string>
@@ -7,14 +8,31 @@
     <string name="txt_avatar">Аватар</string>
     <string name="txt_voice">Голос абонента</string>
     <string name="txt_save">Сохранить</string>
+
     <string name="apply">Применить</string>
+
     <string name="toolbar_change_template">Изменение шаблона</string>
     <string name="toolbar_add">Добавить</string>
     <string name="toolbar_templates_list">Список шаблонов</string>
-    <string name="toolbar_create_template">создать шаблон</string>
+    <string name="toolbar_create_template">Создать шаблон</string>
+    <string name="toolbar_delete">Удалить</string>
+
     <string name="init_template_default_value">Default</string>
+
     <string name="error_template_exist">Такое имя уже есть</string>
     <string name="error_empty_name">Введите имя</string>
-    <string name="toolbar_delete">Удалить</string>
     <string name="error_check_mistakes">Исправьте ошибки</string>
+
+
+    <string name="dialog_music_default">Стандартная мелодия</string>
+    <string name="dialog_music_load">Выбрать мелодию</string>
+    <string name="dialog_avatar_default">Стандартная фотография</string>
+    <string name="dialog_avatar_load">Выбрать фотографию</string>
+    <string name="dialog_voice_default">Стандартный голос</string>
+    <string name="dialog_voice_load">Выбрать голос</string>
+    <string name="dialog_music_title">Музыка на вызове</string>
+    <string name="dialog_avatar_title">Установить аватар</string>
+    <string name="dialog_voice_title">Голос собеседника</string>
+
+
 </resources>

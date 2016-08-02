@@ -1,9 +1,11 @@
 package com.smalew.fakecall.ui.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -18,6 +20,7 @@ import com.smalew.fakecall.data.storage.models.Template;
 import com.smalew.fakecall.data.storage.models.TemplateDTO;
 import com.smalew.fakecall.utils.CheckInputInformation;
 import com.smalew.fakecall.utils.Constants;
+import com.smalew.fakecall.utils.DialogListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,7 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 
-public class TemplateOptionsActivity extends BaseActivity {
+public class TemplateOptionsActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "TemplateOptionsActivity";
 
@@ -47,6 +50,13 @@ public class TemplateOptionsActivity extends BaseActivity {
     TextView mAvatarText;
     @BindView(R.id.template_text_voice)
     TextView mVoiceText;
+
+    @BindView(R.id.template_btn_music)
+    TextView mMusicBtn;
+    @BindView(R.id.template_btn_avatar)
+    TextView mAvatarBtn;
+    @BindView(R.id.template_btn_voice)
+    TextView mVoiceBtn;
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
@@ -80,9 +90,16 @@ public class TemplateOptionsActivity extends BaseActivity {
 
         initToolbar();
         initText();
+        initButtons();
 
         watchers = new ArrayList<>();
         initWatchers();
+    }
+
+    private void initButtons() {
+        mMusicBtn.setOnClickListener(this);
+        mAvatarBtn.setOnClickListener(this);
+        mVoiceBtn.setOnClickListener(this);
     }
 
     @Override
@@ -227,6 +244,55 @@ public class TemplateOptionsActivity extends BaseActivity {
     private void deleteWathers() {
         for (int i = 0; i < mTemplatesInfo.size(); i++) {
             mTemplatesInfo.get(i).removeTextChangedListener(watchers.get(i));
+        }
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        AlertDialog.Builder builder;
+        String selectItem[] = new String[2];
+
+        switch (id) {
+            case Constants.DIALOG_MUSIC:
+                selectItem[0] = getString(R.string.dialog_music_default);
+                selectItem[1] = getString(R.string.dialog_music_load);
+
+                builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.dialog_music_title);
+                builder.setItems(selectItem, new DialogListener());
+                return builder.create();
+            case Constants.DIALOG_AVATAR:
+                selectItem[0] = getString(R.string.dialog_avatar_default);
+                selectItem[1] = getString(R.string.dialog_avatar_load);
+
+                builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.dialog_avatar_title);
+                builder.setItems(selectItem, new DialogListener());
+                return builder.create();
+            case Constants.DIALOG_VOICE:
+                selectItem[0] = getString(R.string.dialog_voice_default);
+                selectItem[1] = getString(R.string.dialog_voice_load);
+
+                builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.dialog_voice_title);
+                builder.setItems(selectItem, new DialogListener());
+                return builder.create();
+        }
+        return null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.template_btn_music:
+                showDialog(1);
+                break;
+            case R.id.template_btn_avatar:
+                showDialog(2);
+                break;
+            case R.id.template_btn_voice:
+                showDialog(3);
+                break;
         }
     }
 }

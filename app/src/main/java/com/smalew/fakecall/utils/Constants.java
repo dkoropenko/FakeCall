@@ -18,4 +18,8 @@ public interface Constants {
     String LIST_VALUES = "listValue";
 
     String ADD_NEW_TEMPLATE_FLAG = "newTemplateFlag";
+
+    int DIALOG_MUSIC = 1;
+    int DIALOG_AVATAR = 2;
+    int DIALOG_VOICE = 3;
 }
