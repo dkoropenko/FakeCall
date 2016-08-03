@@ -42,4 +42,5 @@
     <dimen name="size_64">64dp</dimen>
     <dimen name="size_72">72dp</dimen>
     <dimen name="size_80">80dp</dimen>
+    <dimen name="size_300">300dp</dimen>
 </resources>

@@ -22,4 +22,7 @@ public interface Constants {
     int DIALOG_MUSIC = 1;
     int DIALOG_AVATAR = 2;
     int DIALOG_VOICE = 3;
+    int INTENT_MUSIC = 91;
+    int INTENT_AVATAR = 92;
+    int INTENT_VOICE = 93;
 }

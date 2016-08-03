@@ -17,22 +17,28 @@
     <string name="toolbar_create_template">Создать шаблон</string>
     <string name="toolbar_delete">Удалить</string>
 
-    <string name="init_template_default_value">Default</string>
+    <string name="default_value">Default</string>
 
     <string name="error_template_exist">Такое имя уже есть</string>
     <string name="error_empty_name">Введите имя</string>
     <string name="error_check_mistakes">Исправьте ошибки</string>
 
 
+    <string name="dialog_music_title">Музыка на вызове</string>
     <string name="dialog_music_default">Стандартная мелодия</string>
     <string name="dialog_music_load">Выбрать мелодию</string>
+
+    <string name="dialog_avatar_title">Установить аватар</string>
     <string name="dialog_avatar_default">Стандартная фотография</string>
     <string name="dialog_avatar_load">Выбрать фотографию</string>
+
+    <string name="dialog_voice_title">Голос собеседника</string>
     <string name="dialog_voice_default">Стандартный голос</string>
     <string name="dialog_voice_load">Выбрать голос</string>
-    <string name="dialog_music_title">Музыка на вызове</string>
-    <string name="dialog_avatar_title">Установить аватар</string>
-    <string name="dialog_voice_title">Голос собеседника</string>
+
+    <string name="dialog_flag_music">music_dialog</string>
+    <string name="dialog_flag_avatar">avatar_dialog</string>
+    <string name="dialog_flag_voice">voice_dialog</string>
 
 
 </resources>

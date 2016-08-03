@@ -51,6 +51,7 @@
                 <EditText
                     android:id="@+id/template_edit_phone_number"
                     style="@style/templates_options_edittext"
+                    android:inputType="number"
                     android:hint="@string/txt_phone_number"/>
             </android.support.design.widget.TextInputLayout>
 

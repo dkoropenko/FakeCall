@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/start_btn"
+        android:id="@+id/quick_start_btn"
         style="@style/main_btn"
         android:layout_alignParentBottom="true"
         android:text="Быстрый Старт"/>

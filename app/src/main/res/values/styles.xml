@@ -38,6 +38,10 @@
         <item name="android:textSize">@dimen/font_12</item>
         <item name="android:textColor">@color/txt_options</item>
     </style>
+    <style name="ic_txt" parent="text">
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColor">@color/call_incoming_textview_text_color</item>
+    </style>
 
     <!--MainActivity-->
     <style name="main_btn" parent="templates_btn_text">
@@ -86,6 +90,14 @@
         <item name="android:textColorPrimary">@color/txt_toolbar</item>
         <item name="android:textColorSecondary">@color/txt_toolbar</item>
         <item name="android:actionMenuTextColor">@color/txt_toolbar</item>
+    </style>
+
+    <!--Incoming call-->
+    <style name="ic_textview" parent="ic_txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/space_16</item>
+        <item name="android:background">@color/call_incoming_view_background</item>
     </style>
 
 </resources>

@@ -17,6 +17,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.template_btn)
     Button mTemplateBtn;
 
+    @BindView(R.id.quick_start_btn)
+    Button mQuickStartBtn;
 
 
     @Override
@@ -27,6 +29,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ButterKnife.bind(this);
 
         mTemplateBtn.setOnClickListener(this);
+        mQuickStartBtn.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +40,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.template_btn:
                 intent = new Intent(MainActivity.this, TemplateListActivity.class);
                 break;
+            case R.id.quick_start_btn:
+                intent = new Intent(MainActivity.this, CallActivity.class);
         }
 
         if (intent != null){

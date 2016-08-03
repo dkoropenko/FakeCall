@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/call_incoming_main_background"
+    android:orientation="vertical"
+    tools:context="com.smalew.fakecall.ui.activity.CallActivity">
+
+    <TextView
+        android:id="@+id/incoming_call_abonent_name"
+        style="@style/ic_textview"
+        android:text="Test call"/>
+
+    <TextView
+        android:id="@+id/incoming_call_phone_number"
+        style="@style/ic_textview"
+        android:text="8900 457 50-70"/>
+
+    <ImageView
+        android:id="@+id/incoming_call_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_300"
+        android:src="@drawable/avatar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/call_incoming_view_background">
+
+        <ImageButton
+            android:id="@+id/incoming_call_answer_btn"
+            android:layout_width="@dimen/size_64"
+            android:layout_height="@dimen/size_64"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/space_40"
+            android:background="@drawable/answer_btn"
+            android:src="@drawable/answer_24dp"/>
+
+        <ImageButton
+            android:id="@+id/incoming_call_drop_btn"
+            android:layout_width="@dimen/size_64"
+            android:layout_height="@dimen/size_64"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/space_40"
+            android:background="@drawable/drop_answer_btn"
+            android:src="@drawable/answer_24dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
