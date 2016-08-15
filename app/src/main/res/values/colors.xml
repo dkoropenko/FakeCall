@@ -6,8 +6,8 @@
 
     <color name="background_main">#eaeef4</color>
     <color name="background_main_menu_btn">#264c91</color>
-    <color name="background_accept_answer_btn">#42a703</color>
-    <color name="background_drop_answer_btn">#ca1e1e</color>
+    <color name="background_accept_answer_btn">#478e1b</color>
+    <color name="background_drop_answer_btn">#8c3535</color>
     <color name="background_options_btn">#00264c91</color>
     <color name="background_separator">#bababa</color>
     <color name="background_toolbar">#264c91</color>

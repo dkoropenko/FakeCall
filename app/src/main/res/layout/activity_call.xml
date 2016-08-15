@@ -11,6 +11,8 @@
     <TextView
         android:id="@+id/incoming_call_abonent_name"
         style="@style/ic_textview"
+        android:paddingTop="@dimen/space_32"
+        android:paddingBottom="@dimen/font_8"
         android:text="Test call"/>
 
     <TextView
@@ -18,16 +20,37 @@
         style="@style/ic_textview"
         android:text="8900 457 50-70"/>
 
-    <ImageView
-        android:id="@+id/incoming_call_avatar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/size_300"
-        android:src="@drawable/avatar"/>
-
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="@dimen/size_300">
+
+        <ImageView
+            android:id="@+id/incoming_call_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/space_24"
+            android:paddingBottom="@dimen/space_24"
+            android:src="@drawable/avatar"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_24"
+            android:text="00:00"
+            android:textSize="@dimen/font_24"
+            android:textColor="@color/call_incoming_textview_text_color"/>
+
+    </RelativeLayout>
+
+    <!--Buttons for answer when phone ringing-->
+    <RelativeLayout
+        android:id="@+id/answer_swipe_button_panel"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/call_incoming_view_background">
+        android:background="@color/call_incoming_view_background"
+        android:visibility="visible">
 
         <ImageButton
             android:id="@+id/incoming_call_answer_btn"
@@ -48,7 +71,60 @@
             android:layout_marginRight="@dimen/space_40"
             android:background="@drawable/drop_answer_btn"
             android:src="@drawable/answer_24dp"/>
-
     </RelativeLayout>
+
+    <!--Answer button panel-->
+    <LinearLayout
+        android:id="@+id/answer_button_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/call_incoming_view_background"
+        android:visibility="gone">
+
+        <LinearLayout
+            style="@style/button_panel_container">
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/speakerphone_on_24dp"
+                android:text="Динамик"/>
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/dialpad_24dp"/>
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/microphone_off_24dp"
+                android:text="Запись"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/button_panel_container">
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/add_user_24dp"/>
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/call_pause_24dp"/>
+
+            <ImageButton
+                style="@style/button_panel_button"
+                android:src="@drawable/record_24dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/incoming_call_end_btn"
+            android:layout_width="@dimen/size_200"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/end_call_btn"
+            android:text="End call"
+            />
+    </LinearLayout>
 
 </LinearLayout>

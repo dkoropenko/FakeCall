@@ -15,7 +15,9 @@ import android.widget.TextView;
 import com.smalew.fakecall.R;
 import com.smalew.fakecall.data.managers.DataManager;
 import com.smalew.fakecall.data.storage.models.Template;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -60,7 +62,7 @@ public class CallActivity extends AppCompatActivity implements View.OnClickListe
         initText();
         initPhoto();
         initBtn();
-        initMusic();
+        //initMusic();
     }
 
     private void initText(){
@@ -89,6 +91,12 @@ public class CallActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initPhoto(){
         // TODO: 03.08.16 Create with Picasso
+
+        Picasso.with(this)
+                .load(R.raw.boss)
+                .placeholder(R.drawable.avatar)
+                .error(R.drawable.avatar)
+                .into(mAvatar);
     }
 
     private void initMusic(){

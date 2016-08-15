@@ -96,8 +96,22 @@
     <style name="ic_textview" parent="ic_txt">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/space_16</item>
+        <item name="android:paddingLeft">@dimen/space_16</item>
+        <item name="android:paddingRight">@dimen/space_16</item>
         <item name="android:background">@color/call_incoming_view_background</item>
     </style>
 
+
+    <!--Button's panel-->
+    <style name="button_panel_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_64</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="button_panel_button" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/size_56</item>
+        <item name="android:layout_weight">0.3</item>
+    </style>
 </resources>
